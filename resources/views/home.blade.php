@@ -2,356 +2,70 @@
 <html lang="id">
 
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Sistem Tiket Konser</title>
 
-    <style>
-
-        * {
-            box-sizing: border-box;
-        }
-
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f5f3f7;
-            color: #222;
-        }
-
-
-        /* =========================
-           NAVBAR
-        ========================= */
-
-        .navbar {
-            height: 65px;
-            background-color: #17131f;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 70px;
-            color: white;
-        }
-
-        .logo {
-            font-size: 21px;
-            font-weight: bold;
-            letter-spacing: 1px;
-        }
-
-        .logo span {
-            color: #9b59b6;
-        }
-
-        .nav-menu {
-            display: flex;
-            gap: 28px;
-        }
-
-        .nav-menu a {
-            color: white;
-            text-decoration: none;
-            font-size: 13px;
-        }
-
-        .nav-menu a:hover {
-            color: #b879d1;
-        }
-
-
-        /* =========================
-           HERO / BANNER
-        ========================= */
-
-        .hero {
-            height: 500px;
-
-            background:
-                linear-gradient(
-                    rgba(25, 10, 40, 0.45),
-                    rgba(25, 10, 40, 0.65)
-                ),
-                url('/images/Banner.png');
-
-            background-size: cover;
-            background-position: center;
-
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-            text-align: center;
-            color: white;
-        }
-
-        .hero-content h1 {
-            margin: 0;
-            font-size: 46px;
-            letter-spacing: 5px;
-        }
-
-        .hero-content p {
-            margin-top: 15px;
-            font-size: 16px;
-        }
-
-        .hero-button {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 12px 25px;
-
-            background-color: white;
-            color: #222;
-
-            text-decoration: none;
-            font-size: 13px;
-            font-weight: bold;
-
-            border-radius: 4px;
-        }
-
-        .hero-button:hover {
-            background-color: #eeeeee;
-        }
-
-
-        /* =========================
-           4 MENU DATA
-        ========================= */
-
-        .menu-section {
-            background-color: #f5f3f7;
-            padding: 35px 8%;
-        }
-
-        .menu {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 18px;
-        }
-
-        .menu-item {
-            text-align: center;
-            padding: 24px 15px;
-
-            background-color: white;
-
-            border: 1px solid #e4dfe8;
-            border-radius: 8px;
-
-            text-decoration: none;
-            color: #222;
-
-            transition: 0.2s;
-        }
-
-        .menu-item:hover {
-            border-color: #9b59b6;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-            transform: translateY(-2px);
-        }
-
-        .menu-icon {
-            font-size: 25px;
-            margin-bottom: 10px;
-        }
-
-        .menu-item h3 {
-            margin: 5px 0 7px;
-            font-size: 16px;
-            font-weight: 600;
-        }
-
-        .menu-item p {
-            margin: 0;
-            color: #777;
-            font-size: 12px;
-        }
-
-
-        /* =========================
-           CONTENT
-        ========================= */
-
-        .content {
-            width: 85%;
-            max-width: 1100px;
-            margin: 45px auto;
-        }
-
-        .section-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-
-        .section-header h2 {
-            margin: 0;
-            font-size: 24px;
-        }
-
-        .section-header a {
-            color: #777;
-            text-decoration: none;
-            font-size: 13px;
-        }
-
-        .section-header a:hover {
-            color: #9b59b6;
-        }
-
-
-        /* =========================
-           EVENT IMAGE
-        ========================= */
-
-        .events {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 22px;
-        }
-
-        .event-card {
-            background-color: white;
-            border: 1px solid #ddd;
-            text-align: center;
-
-            border-radius: 6px;
-            overflow: hidden;
-
-            transition: 0.2s;
-        }
-
-        .event-card:hover {
-            box-shadow: 0 5px 12px rgba(0, 0, 0, 0.10);
-            transform: translateY(-3px);
-        }
-
-        .event-card img {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-            display: block;
-        }
-
-        .event-card h2 {
-            margin: 15px 0;
-            font-size: 19px;
-            font-weight: 600;
-            color: #29202f;
-        }
-
-
-        /* =========================
-           FOOTER
-        ========================= */
-
-        footer {
-            background-color: #17131f;
-            color: #aaa;
-            text-align: center;
-            padding: 25px;
-            margin-top: 60px;
-            font-size: 13px;
-        }
-
-
-        /* =========================
-           RESPONSIVE
-        ========================= */
-
-        @media (max-width: 800px) {
-
-            .navbar {
-                padding: 0 20px;
-            }
-
-            .nav-menu {
-                gap: 10px;
-            }
-
-            .nav-menu a {
-                font-size: 11px;
-            }
-
-            .menu {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .events {
-                grid-template-columns: 1fr;
-            }
-
-            .hero-content h1 {
-                font-size: 32px;
-            }
-
-        }
-
-    </style>
-
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
+<body class="m-0 bg-[#f5f3f7] text-[#222] font-sans">
 
-<body class="home-page">
+    <!-- NAVBAR -->
+    <nav class="h-[65px] bg-[#17131f] flex items-center justify-between px-5 md:px-[70px] text-white">
 
-
-    <!-- =========================
-         NAVBAR
-    ========================== -->
-
-    <div class="navbar">
-
-        <div class="logo">
-            TICKET<span>BOX</span>
+        <div class="text-[21px] font-bold tracking-[1px]">
+            TICKET<span class="text-[#9b59b6]">BOX</span>
         </div>
 
-        <div class="nav-menu">
+        <div class="flex gap-3 md:gap-7">
 
-            <a href="/">
+            <a href="/" class="text-white no-underline text-[11px] md:text-[13px] hover:text-[#b879d1]">
                 HOME
             </a>
 
-            <a href="/konser">
+            <a href="/konser" class="text-white no-underline text-[11px] md:text-[13px] hover:text-[#b879d1]">
                 KONSER
             </a>
 
-            <a href="/tiket">
+            <a href="/tiket" class="text-white no-underline text-[11px] md:text-[13px] hover:text-[#b879d1]">
                 TIKET
             </a>
 
-            <a href="/pembeli">
+            <a href="/pembeli" class="text-white no-underline text-[11px] md:text-[13px] hover:text-[#b879d1]">
                 PEMBELI
             </a>
 
-            <a href="/pemesanan">
+            <a href="/pemesanan" class="text-white no-underline text-[11px] md:text-[13px] hover:text-[#b879d1]">
                 PEMESANAN
             </a>
 
         </div>
 
-    </div>
+    </nav>
 
 
-    <!-- =========================
-         HERO
-    ========================== -->
+    <!-- HERO -->
+    <section
+        class="h-[500px] bg-cover bg-center flex items-center justify-center text-center text-white"
+        style="background-image: linear-gradient(rgba(25,10,40,0.45), rgba(25,10,40,0.65)), url('/images/Banner.png');"
+    >
 
-    <section class="hero">
+        <div>
 
-        <div class="hero-content">
+            <h1 class="m-0 text-[32px] md:text-[46px] tracking-[3px] md:tracking-[5px] font-bold">
+                SISTEM TIKET KONSER
+            </h1>
 
-            <h1>SISTEM TIKET KONSER</h1>
-
-            <p>
+            <p class="mt-[15px] text-[14px] md:text-[16px]">
                 Temukan konser favorit dan kelola tiket dengan mudah
             </p>
 
-            <a href="/konser" class="hero-button">
+            <a
+                href="/konser"
+                class="inline-block mt-5 px-[25px] py-3 bg-white text-[#222] no-underline text-[13px] font-bold rounded hover:bg-[#eeeeee]"
+            >
                 LIHAT KONSER
             </a>
 
@@ -360,88 +74,84 @@
     </section>
 
 
-    <!-- =========================
-         4 MENU DATA
-    ========================== -->
+    <!-- 4 MENU DATA -->
+    <section class="bg-[#f5f3f7] px-[8%] py-[35px]">
 
-    <section class="menu-section">
-
-        <div class="menu">
-
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[18px]">
 
             <!-- KONSER -->
-
-            <a href="/konser" class="menu-item">
-
-                <div class="menu-icon">
+            <a
+                href="/konser"
+                class="text-center p-6 bg-white border border-[#e4dfe8] rounded-lg no-underline text-[#222] transition duration-200 hover:border-[#9b59b6] hover:shadow-md hover:-translate-y-0.5"
+            >
+                <div class="text-[25px] mb-[10px]">
                     🎤
                 </div>
 
-                <h3>
+                <h3 class="m-[5px_0_7px] text-[16px] font-semibold">
                     Data Konser
                 </h3>
 
-                <p>
+                <p class="m-0 text-[#777] text-[12px]">
                     Informasi konser
                 </p>
-
             </a>
 
 
             <!-- TIKET -->
-
-            <a href="/tiket" class="menu-item">
-
-                <div class="menu-icon">
+            <a
+                href="/tiket"
+                class="text-center p-6 bg-white border border-[#e4dfe8] rounded-lg no-underline text-[#222] transition duration-200 hover:border-[#9b59b6] hover:shadow-md hover:-translate-y-0.5"
+            >
+                <div class="text-[25px] mb-[10px]">
                     🎟
                 </div>
 
-                <h3>
+                <h3 class="m-[5px_0_7px] text-[16px] font-semibold">
                     Data Tiket
                 </h3>
 
-                <p>
+                <p class="m-0 text-[#777] text-[12px]">
                     Jenis dan harga tiket
                 </p>
-
             </a>
 
 
             <!-- PEMBELI -->
-
-            <a href="/pembeli" class="menu-item">
-
-                <div class="menu-icon">
+            <a
+                href="/pembeli"
+                class="text-center p-6 bg-white border border-[#e4dfe8] rounded-lg no-underline text-[#222] transition duration-200 hover:border-[#9b59b6] hover:shadow-md hover:-translate-y-0.5"
+            >
+                <div class="text-[25px] mb-[10px]">
                     👤
                 </div>
 
-                <h3>
+                <h3 class="m-[5px_0_7px] text-[16px] font-semibold">
                     Data Pembeli
                 </h3>
 
-                <p>
+                <p class="m-0 text-[#777] text-[12px]">
                     Informasi pembeli
                 </p>
-
             </a>
 
 
             <!-- PEMESANAN -->
-
-            <a href="/pemesanan" class="menu-item">
-
-                <div class="menu-icon">
+            <a
+                href="/pemesanan"
+                class="text-center p-6 bg-white border border-[#e4dfe8] rounded-lg no-underline text-[#222] transition duration-200 hover:border-[#9b59b6] hover:shadow-md hover:-translate-y-0.5"
+            >
+                <div class="text-[25px] mb-[10px]">
                     🛒
                 </div>
 
-                <h3>
+                <h3 class="m-[5px_0_7px] text-[16px] font-semibold">
                     Data Pemesanan
                 </h3>
 
-                <p>
+                <p class="m-0 text-[#777] text-[12px]">
                     Informasi pemesanan
                 </p>
-
             </a>
 
         </div>
@@ -449,54 +159,69 @@
     </section>
 
 
-    <!-- =========================
-         UPCOMING EVENTS
-    ========================== -->
+    <!-- UPCOMING EVENTS -->
+    <main class="w-[85%] max-w-[1100px] mx-auto my-[45px]">
 
-    <div class="content">
+        <div class="flex justify-between items-center mb-5">
 
-        <div class="section-header">
-
-            <h2>
+            <h2 class="m-0 text-[24px] font-semibold">
                 Upcoming Events
             </h2>
 
-            <a href="/konser">
+            <a
+                href="/konser"
+                class="text-[#777] no-underline text-[13px] hover:text-[#9b59b6]"
+            >
                 Lihat Semua
             </a>
 
         </div>
 
 
-        <div class="events">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-[22px]">
 
-            <div class="event-card">
+            <!-- GFRIEND -->
+            <div class="bg-white border border-[#ddd] text-center rounded-md overflow-hidden transition duration-200 hover:shadow-lg hover:-translate-y-1">
 
-                <img src="/images/GFRIEND.png">
+                <img
+                    src="/images/GFRIEND.png"
+                    alt="GFRIEND"
+                    class="w-full h-[180px] object-cover block"
+                >
 
-                <h2>
+                <h2 class="my-[15px] text-[19px] font-semibold text-[#29202f]">
                     GFRIEND
                 </h2>
 
             </div>
 
 
-            <div class="event-card">
+            <!-- ENHYPEN -->
+            <div class="bg-white border border-[#ddd] text-center rounded-md overflow-hidden transition duration-200 hover:shadow-lg hover:-translate-y-1">
 
-                <img src="/images/ENHYPEN.png">
+                <img
+                    src="/images/ENHYPEN.png"
+                    alt="ENHYPEN"
+                    class="w-full h-[180px] object-cover block"
+                >
 
-                <h2>
+                <h2 class="my-[15px] text-[19px] font-semibold text-[#29202f]">
                     ENHYPEN
                 </h2>
 
             </div>
 
 
-            <div class="event-card">
+            <!-- BABYMONSTER -->
+            <div class="bg-white border border-[#ddd] text-center rounded-md overflow-hidden transition duration-200 hover:shadow-lg hover:-translate-y-1">
 
-                <img src="/images/BM.png">
+                <img
+                    src="/images/BM.png"
+                    alt="BABYMONSTER"
+                    class="w-full h-[180px] object-cover block"
+                >
 
-                <h2>
+                <h2 class="my-[15px] text-[19px] font-semibold text-[#29202f]">
                     BABYMONSTER
                 </h2>
 
@@ -504,19 +229,15 @@
 
         </div>
 
-    </div>
+    </main>
 
 
-    <!-- =========================
-         FOOTER
-    ========================== -->
-
-    <footer>
+    <!-- FOOTER -->
+    <footer class="bg-[#17131f] text-[#aaa] text-center py-[25px] mt-[60px] text-[13px]">
 
         Sistem Tiket Konser © 2026
 
     </footer>
-
 
 </body>
 

@@ -2,412 +2,138 @@
 <html lang="id">
 
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Data Konser</title>
 
-    <style>
-
-        * {
-            box-sizing: border-box;
-        }
-
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f5f3f7;
-            color: #222;
-        }
-
-
-        /* =========================
-           NAVBAR
-        ========================= */
-
-        .navbar {
-            height: 65px;
-            background: linear-gradient(90deg, #17131f, #281632);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 70px;
-            color: white;
-        }
-
-        .logo {
-            font-size: 21px;
-            font-weight: bold;
-            letter-spacing: 1px;
-        }
-
-        .logo span {
-            color: #c77dff;
-        }
-
-        .nav-menu {
-            display: flex;
-            gap: 28px;
-        }
-
-        .nav-menu a {
-            color: white;
-            text-decoration: none;
-            font-size: 13px;
-            font-weight: bold;
-        }
-
-        .nav-menu a:hover {
-            color: #d69cff;
-        }
-
-
-        /* =========================
-           CONTENT
-        ========================= */
-
-        .container {
-            width: 90%;
-            max-width: 1100px;
-            margin: 45px auto;
-        }
-
-        .page-title {
-            margin-bottom: 25px;
-        }
-
-        .page-title h1 {
-            margin: 0;
-            font-size: 30px;
-            color: #29202f;
-        }
-
-        .page-title p {
-            margin-top: 8px;
-            color: #777;
-            font-size: 14px;
-        }
-
-
-        /* =========================
-           SEARCH / BROWSE
-        ========================= */
-
-        .search-box {
-            background-color: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
-            margin-bottom: 20px;
-        }
-
-        .search-box form {
-            display: flex;
-            gap: 10px;
-        }
-
-        .search-box input {
-            flex: 1;
-            padding: 12px 15px;
-            border: 1px solid #ddd;
-            border-radius: 6px;
-            font-size: 14px;
-            outline: none;
-        }
-
-        .search-box input:focus {
-            border-color: #9b59b6;
-        }
-
-        .search-box button {
-            padding: 12px 22px;
-            background-color: #9b59b6;
-            color: white;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-            font-weight: bold;
-        }
-
-        .search-box button:hover {
-            background-color: #7d3c98;
-        }
-
-
-        /* =========================
-           ADD BUTTON
-        ========================= */
-
-        .add-button {
-            display: inline-block;
-            background-color: #29202f;
-            color: white;
-            text-decoration: none;
-            padding: 12px 18px;
-            border-radius: 6px;
-            font-size: 14px;
-            font-weight: bold;
-            margin-bottom: 20px;
-        }
-
-        .add-button:hover {
-            background-color: #432d4e;
-        }
-
-
-        /* =========================
-           TABLE
-        ========================= */
-
-        .table-card {
-            background-color: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-
-        thead {
-            background: linear-gradient(90deg, #29202f, #432d4e);
-            color: white;
-        }
-
-        th {
-            padding: 15px;
-            text-align: left;
-            font-size: 13px;
-        }
-
-        td {
-            padding: 15px;
-            border-bottom: 1px solid #eee;
-            font-size: 14px;
-        }
-
-        tbody tr:hover {
-            background-color: #faf6fc;
-        }
-
-        tbody tr:last-child td {
-            border-bottom: none;
-        }
-
-
-        /* =========================
-           ACTION
-        ========================= */
-
-        .action {
-            white-space: nowrap;
-        }
-
-        .action a,
-        .action button {
-            display: inline-block;
-            padding: 7px 11px;
-            margin-right: 4px;
-            border-radius: 5px;
-            font-size: 12px;
-            text-decoration: none;
-            cursor: pointer;
-        }
-
-        .lihat {
-            background-color: #eee;
-            color: #333;
-        }
-
-        .lihat:hover {
-            background-color: #ddd;
-        }
-
-        .edit {
-            background-color: #9b59b6;
-            color: white;
-        }
-
-        .edit:hover {
-            background-color: #7d3c98;
-        }
-
-        .hapus {
-            background-color: #e74c3c;
-            color: white;
-            border: none;
-        }
-
-        .hapus:hover {
-            background-color: #c0392b;
-        }
-
-
-        /* =========================
-           EMPTY DATA
-        ========================= */
-
-        .empty {
-            text-align: center;
-            color: #777;
-            padding: 30px;
-        }
-
-
-        /* =========================
-           FOOTER
-        ========================= */
-
-        footer {
-            background: linear-gradient(90deg, #17131f, #281632);
-            color: #aaa;
-            text-align: center;
-            padding: 25px;
-            margin-top: 60px;
-            font-size: 13px;
-        }
-
-
-        /* =========================
-           RESPONSIVE
-        ========================= */
-
-        @media (max-width: 800px) {
-
-            .navbar {
-                padding: 0 20px;
-            }
-
-            .nav-menu {
-                gap: 10px;
-            }
-
-            .nav-menu a {
-                font-size: 10px;
-            }
-
-            .container {
-                width: 95%;
-            }
-
-            .search-box form {
-                flex-direction: column;
-            }
-
-            .table-card {
-                overflow-x: auto;
-            }
-
-            table {
-                min-width: 850px;
-            }
-
-        }
-
-    </style>
-
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
+<body class="m-0 bg-[#f5f3f7] text-[#222] font-sans">
 
-<body>
+    <!-- NAVBAR -->
+    <nav class="h-[65px] bg-[#17131f] flex items-center justify-between px-5 md:px-[70px] text-white">
 
-
-    <!-- =========================
-         NAVBAR
-    ========================= -->
-
-    <div class="navbar">
-
-        <div class="logo">
-            TICKET<span>BOX</span>
+        <div class="text-[21px] font-bold tracking-[1px]">
+            TICKET<span class="text-[#9b59b6]">BOX</span>
         </div>
 
-        <div class="nav-menu">
+        <div class="flex gap-3 md:gap-7">
 
-            <a href="/">HOME</a>
+            <a href="/" class="text-white no-underline text-[11px] md:text-[13px] hover:text-[#b879d1]">
+                HOME
+            </a>
 
-            <a href="/konser">KONSER</a>
+            <a href="/konser" class="text-[#b879d1] no-underline text-[11px] md:text-[13px]">
+                KONSER
+            </a>
 
-            <a href="/tiket">TIKET</a>
+            <a href="/tiket" class="text-white no-underline text-[11px] md:text-[13px] hover:text-[#b879d1]">
+                TIKET
+            </a>
 
-            <a href="/pembeli">PEMBELI</a>
+            <a href="/pembeli" class="text-white no-underline text-[11px] md:text-[13px] hover:text-[#b879d1]">
+                PEMBELI
+            </a>
 
-            <a href="/pemesanan">PEMESANAN</a>
-
-        </div>
-
-    </div>
-
-
-    <!-- =========================
-         CONTENT
-    ========================= -->
-
-    <div class="container">
-
-        <div class="page-title">
-
-            <h1>Data Konser</h1>
-
-            <p>Kelola informasi nama konser, artis, lokasi, dan tanggal.</p>
+            <a href="/pemesanan" class="text-white no-underline text-[11px] md:text-[13px] hover:text-[#b879d1]">
+                PEMESANAN
+            </a>
 
         </div>
 
+    </nav>
 
-        <!-- =========================
-             BROWSE / PENCARIAN
-        ========================= -->
 
-        <div class="search-box">
+    <!-- CONTENT -->
+    <main class="w-[90%] max-w-[1150px] mx-auto py-10">
 
-            <form action="/konser" method="GET">
+        <!-- JUDUL -->
+        <div class="mb-6">
 
-                <input
-                    type="text"
-                    name="search"
-                    placeholder="Cari konser, artis, atau lokasi..."
-                    value="{{ request('search') }}"
+            <h1 class="m-0 text-[28px] font-bold text-[#29202f]">
+                Data Konser
+            </h1>
+
+            <p class="mt-2 text-[14px] text-[#777]">
+                Kelola informasi konser yang tersedia.
+            </p>
+
+        </div>
+
+
+        <!-- BROWSE + ADD -->
+        <div class="bg-white border border-[#e4dfe8] rounded-lg p-5 mb-6">
+
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+
+                <!-- BROWSE -->
+                <form action="/konser" method="GET" class="flex w-full md:w-auto">
+
+                    <input
+                        type="text"
+                        name="search"
+                        placeholder="Cari konser, artis, atau lokasi..."
+                        value="{{ request('search') }}"
+                        class="w-full md:w-[350px] px-4 py-2.5 border border-[#ddd] rounded-l-md outline-none focus:border-[#9b59b6]"
+                    >
+
+                    <button
+                        type="submit"
+                        class="px-5 py-2.5 bg-[#9b59b6] text-white border-0 rounded-r-md cursor-pointer hover:bg-[#8646a3]"
+                    >
+                        Cari
+                    </button>
+
+                </form>
+
+
+                <!-- ADD -->
+                <a
+                    href="/konser/create"
+                    class="inline-block text-center px-5 py-2.5 bg-[#17131f] text-white no-underline rounded-md text-[14px] hover:bg-[#29202f]"
                 >
+                    + Tambah Konser
+                </a>
 
-                <button type="submit">
-                    🔍 Cari
-                </button>
-
-            </form>
+            </div>
 
         </div>
 
 
-        <!-- =========================
-             ADD
-        ========================= -->
+        <!-- TABLE -->
+        <div class="bg-white border border-[#e4dfe8] rounded-lg overflow-x-auto">
 
-        <a href="/konser/create" class="add-button">
-            + Tambah Data Konser
-        </a>
-
-
-        <!-- =========================
-             TABLE
-        ========================= -->
-
-        <div class="table-card">
-
-            <table>
+            <table class="w-full border-collapse">
 
                 <thead>
 
-                    <tr>
+                    <tr class="bg-[#f7f5f8] border-b border-[#e4dfe8]">
 
-                        <th>ID</th>
-                        <th>Nama Konser</th>
-                        <th>Artis</th>
-                        <th>Lokasi</th>
-                        <th>Tanggal</th>
-                        <th>Aksi</th>
+                        <th class="px-5 py-4 text-left text-[13px] font-semibold">
+                            ID
+                        </th>
+
+                        <th class="px-5 py-4 text-left text-[13px] font-semibold">
+                            Nama Konser
+                        </th>
+
+                        <th class="px-5 py-4 text-left text-[13px] font-semibold">
+                            Artis
+                        </th>
+
+                        <th class="px-5 py-4 text-left text-[13px] font-semibold">
+                            Lokasi
+                        </th>
+
+                        <th class="px-5 py-4 text-left text-[13px] font-semibold">
+                            Tanggal
+                        </th>
+
+                        <th class="px-5 py-4 text-center text-[13px] font-semibold">
+                            Aksi
+                        </th>
 
                     </tr>
 
@@ -416,97 +142,86 @@
 
                 <tbody>
 
-                    @if ($konser->count() > 0)
+                    @forelse ($konser as $item)
 
-                        @foreach ($konser as $item)
+                        <tr class="border-b border-[#eee] hover:bg-[#faf8fb]">
 
-                            <tr>
+                            <td class="px-5 py-4 text-[13px]">
+                                {{ $item->id }}
+                            </td>
 
-                                <td>
-                                    {{ $item->id }}
-                                </td>
+                            <td class="px-5 py-4 text-[13px] font-medium">
+                                {{ $item->Nama_Konser }}
+                            </td>
 
-                                <td>
-                                    <strong>
-                                        {{ $item->Nama_Konser }}
-                                    </strong>
-                                </td>
+                            <td class="px-5 py-4 text-[13px]">
+                                {{ $item->Artis }}
+                            </td>
 
-                                <td>
-                                    {{ $item->Artis }}
-                                </td>
+                            <td class="px-5 py-4 text-[13px]">
+                                {{ $item->Lokasi }}
+                            </td>
 
-                                <td>
-                                    {{ $item->Lokasi }}
-                                </td>
+                            <td class="px-5 py-4 text-[13px]">
+                                {{ $item->Tanggal }}
+                            </td>
 
-                                <td>
-                                    {{ $item->Tanggal }}
-                                </td>
+                            <td class="px-5 py-4 text-center whitespace-nowrap">
 
-                                <td class="action">
+                                <!-- READ -->
+                                <a
+                                    href="/konser/{{ $item->id }}"
+                                    class="inline-block px-3 py-1.5 bg-[#eee8f2] text-[#6b3f7c] no-underline rounded text-[12px] mr-1 hover:bg-[#e2d7e8]"
+                                >
+                                    Lihat
+                                </a>
 
-                                    <!-- READ -->
+                                <!-- EDIT -->
+                                <a
+                                    href="/konser/{{ $item->id }}/edit"
+                                    class="inline-block px-3 py-1.5 bg-[#f0eef2] text-[#555] no-underline rounded text-[12px] mr-1 hover:bg-[#e4e1e7]"
+                                >
+                                    Edit
+                                </a>
 
-                                    <a
-                                        href="/konser/{{ $item->id }}"
-                                        class="lihat"
+                                <!-- DELETE -->
+                                <form
+                                    action="/konser/{{ $item->id }}"
+                                    method="POST"
+                                    class="inline"
+                                >
+
+                                    @csrf
+                                    @method('DELETE')
+
+                                    <button
+                                        type="submit"
+                                        onclick="return confirm('Apakah Anda yakin ingin menghapus Data konser ini?')"
+                                        class="px-3 py-1.5 bg-[#f3e6e6] text-[#a44] border-0 rounded text-[12px] cursor-pointer hover:bg-[#ead5d5]"
                                     >
-                                        Lihat
-                                    </a>
+                                        Hapus
+                                    </button>
 
-
-                                    <!-- EDIT -->
-
-                                    <a
-                                        href="/konser/{{ $item->id }}/edit"
-                                        class="edit"
-                                    >
-                                        Edit
-                                    </a>
-
-
-                                    <!-- DELETE -->
-
-                                    <form
-                                        action="/konser/{{ $item->id }}"
-                                        method="POST"
-                                        style="display: inline-block;"
-                                    >
-
-                                        @csrf
-
-                                        @method('DELETE')
-
-                                        <button
-                                            type="submit"
-                                            class="hapus"
-                                            onclick="return confirm('Apakah Anda yakin ingin menghapus Data konser ini?')"
-                                        >
-                                            Hapus
-                                        </button>
-
-                                    </form>
-
-                                </td>
-
-                            </tr>
-
-                        @endforeach
-
-                    @else
-
-                        <tr>
-
-                            <td colspan="6" class="empty">
-
-                                Data konser tidak ditemukan.
+                                </form>
 
                             </td>
 
                         </tr>
 
-                    @endif
+                    @empty
+
+                        <tr>
+
+                            <td
+                                colspan="6"
+                                class="px-5 py-10 text-center text-[#888] text-[14px]"
+                            >
+                                Belum ada data konser.
+                            </td>
+
+                        </tr>
+
+                    @endforelse
 
                 </tbody>
 
@@ -514,19 +229,15 @@
 
         </div>
 
-    </div>
+    </main>
 
 
-    <!-- =========================
-         FOOTER
-    ========================= -->
-
-    <footer>
+    <!-- FOOTER -->
+    <footer class="bg-[#17131f] text-[#aaa] text-center py-6 mt-[60px] text-[13px]">
 
         Sistem Tiket Konser © 2026
 
     </footer>
-
 
 </body>
 
