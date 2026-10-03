@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Sistem Tiket Konser</title>
 
     <style>
+
         * {
             box-sizing: border-box;
         }
@@ -14,9 +17,10 @@
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            background-color: #f5f3f7;
             color: #222;
         }
+
 
         /* =========================
            NAVBAR
@@ -105,6 +109,8 @@
             text-decoration: none;
             font-size: 13px;
             font-weight: bold;
+
+            border-radius: 4px;
         }
 
         .hero-button:hover {
@@ -117,45 +123,52 @@
         ========================= */
 
         .menu-section {
-            background-color: white;
-            padding: 30px 10%;
+            background-color: #f5f3f7;
+            padding: 35px 8%;
         }
 
         .menu {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
         }
 
         .menu-item {
             text-align: center;
-            padding: 20px;
-            border-right: 1px solid #ddd;
+            padding: 24px 15px;
+
+            background-color: white;
+
+            border: 1px solid #e4dfe8;
+            border-radius: 8px;
+
             text-decoration: none;
             color: #222;
+
+            transition: 0.2s;
         }
 
-        .menu-item:last-child {
-            border-right: none;
+        .menu-item:hover {
+            border-color: #9b59b6;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+            transform: translateY(-2px);
         }
 
         .menu-icon {
-            font-size: 27px;
-            margin-bottom: 8px;
+            font-size: 25px;
+            margin-bottom: 10px;
         }
 
         .menu-item h3 {
-            margin: 5px 0;
+            margin: 5px 0 7px;
             font-size: 16px;
+            font-weight: 600;
         }
 
         .menu-item p {
             margin: 0;
             color: #777;
-            font-size: 13px;
-        }
-
-        .menu-item:hover {
-            background-color: #fafafa;
+            font-size: 12px;
         }
 
 
@@ -187,6 +200,10 @@
             font-size: 13px;
         }
 
+        .section-header a:hover {
+            color: #9b59b6;
+        }
+
 
         /* =========================
            EVENT IMAGE
@@ -201,6 +218,17 @@
         .event-card {
             background-color: white;
             border: 1px solid #ddd;
+            text-align: center;
+
+            border-radius: 6px;
+            overflow: hidden;
+
+            transition: 0.2s;
+        }
+
+        .event-card:hover {
+            box-shadow: 0 5px 12px rgba(0, 0, 0, 0.10);
+            transform: translateY(-3px);
         }
 
         .event-card img {
@@ -208,6 +236,13 @@
             height: 180px;
             object-fit: cover;
             display: block;
+        }
+
+        .event-card h2 {
+            margin: 15px 0;
+            font-size: 19px;
+            font-weight: 600;
+            color: #29202f;
         }
 
 
@@ -247,10 +282,6 @@
                 grid-template-columns: repeat(2, 1fr);
             }
 
-            .menu-item {
-                border-bottom: 1px solid #ddd;
-            }
-
             .events {
                 grid-template-columns: 1fr;
             }
@@ -258,12 +289,16 @@
             .hero-content h1 {
                 font-size: 32px;
             }
+
         }
+
     </style>
+
 </head>
 
 
-<body>
+<body class="home-page">
+
 
     <!-- =========================
          NAVBAR
@@ -332,6 +367,7 @@
     <section class="menu-section">
 
         <div class="menu">
+
 
             <!-- KONSER -->
 
@@ -435,15 +471,35 @@
         <div class="events">
 
             <div class="event-card">
+
                 <img src="/images/GFRIEND.png">
+
+                <h2>
+                    GFRIEND
+                </h2>
+
             </div>
 
+
             <div class="event-card">
+
                 <img src="/images/ENHYPEN.png">
+
+                <h2>
+                    ENHYPEN
+                </h2>
+
             </div>
 
+
             <div class="event-card">
+
                 <img src="/images/BM.png">
+
+                <h2>
+                    BABYMONSTER
+                </h2>
+
             </div>
 
         </div>
@@ -463,4 +519,5 @@
 
 
 </body>
+
 </html>

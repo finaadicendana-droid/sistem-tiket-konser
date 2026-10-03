@@ -16,7 +16,7 @@
         <br><br>
 
         <label>Kategori</label><br>
-        <input type="text" name="kategori">
+        <input type="text" name="kategori">`
         <br><br>
 
         <label>Harga</label><br>
