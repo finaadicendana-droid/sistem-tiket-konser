@@ -15,34 +15,39 @@
     <!-- NAVBAR -->
     <nav class="h-[65px] bg-[#17131f] flex items-center justify-between px-5 md:px-[70px] text-white">
 
+        <!-- LOGO -->
         <div class="text-[21px] font-bold tracking-[1px]">
             TICKET<span class="text-[#9b59b6]">BOX</span>
         </div>
 
+        <!-- MENU -->
         <div class="flex gap-3 md:gap-7">
 
+            <!-- HOME -->
             <a href="/"
                class="text-white no-underline text-[11px] md:text-[13px] hover:text-[#b879d1]">
                 HOME
             </a>
 
+            <!-- KONSER -->
             <a href="/konser"
                class="text-white no-underline text-[11px] md:text-[13px] hover:text-[#b879d1]">
                 KONSER
             </a>
 
+            <!-- TIKET -->
             <a href="/tiket"
                class="text-white no-underline text-[11px] md:text-[13px] hover:text-[#b879d1]">
                 TIKET
             </a>
 
-            <a
-            href="{{ route('merchandise.index') }}"
-            class="text-[#b879d1] no-underline text-[12px] md:text-[14px]"
-            >
-             MERCHANDISE
+            <!-- MERCHANDISE AKTIF -->
+            <a href="{{ route('merchandise.index') }}"
+               class="text-[#b879d1] no-underline text-[11px] md:text-[13px]">
+                MERCHANDISE
             </a>
 
+            <!-- PEMBELI -->
             <a href="/pembeli"
                class="text-white no-underline text-[11px] md:text-[13px] hover:text-[#b879d1]">
                 PEMBELI
@@ -114,6 +119,7 @@
 
             <table class="w-full border-collapse">
 
+                <!-- HEADER -->
                 <thead>
 
                     <tr class="bg-[#f7f5f8] border-b border-[#e4dfe8]">
@@ -147,6 +153,7 @@
                 </thead>
 
 
+                <!-- DATA -->
                 <tbody>
 
                     @forelse ($merchandise as $item)
@@ -158,30 +165,25 @@
                                 {{ $item->id }}
                             </td>
 
-
                             <!-- NAMA MERCHANDISE -->
                             <td class="px-5 py-4 text-[13px] font-medium">
                                 {{ $item->Nama_Merchandise }}
                             </td>
-
 
                             <!-- KATEGORI -->
                             <td class="px-5 py-4 text-[13px]">
                                 {{ $item->Kategori }}
                             </td>
 
-
                             <!-- HARGA -->
                             <td class="px-5 py-4 text-[13px]">
                                 Rp {{ number_format($item->Harga, 0, ',', '.') }}
                             </td>
 
-
                             <!-- STOK -->
                             <td class="px-5 py-4 text-[13px]">
                                 {{ $item->Stok }}
                             </td>
-
 
                             <!-- AKSI -->
                             <td class="px-5 py-4 text-center whitespace-nowrap">
@@ -194,7 +196,6 @@
                                     Lihat
                                 </a>
 
-
                                 <!-- EDIT -->
                                 <a
                                     href="/merchandise/{{ $item->id }}/edit"
@@ -202,7 +203,6 @@
                                 >
                                     Edit
                                 </a>
-
 
                                 <!-- HAPUS -->
                                 <form
@@ -227,7 +227,6 @@
                             </td>
 
                         </tr>
-
 
                     @empty
 
@@ -263,4 +262,3 @@
 </body>
 
 </html>
- 

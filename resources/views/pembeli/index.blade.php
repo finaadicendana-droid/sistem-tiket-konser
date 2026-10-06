@@ -12,44 +12,48 @@
 
 <body class="m-0 bg-[#f5f3f7] text-[#222] font-sans">
 
-    <!-- NAVBAR -->
-    <nav class="h-[65px] bg-[#17131f] flex items-center justify-between px-5 md:px-[70px] text-white">
+   <!-- NAVBAR -->
+<nav class="h-[65px] bg-[#17131f] flex items-center justify-between px-5 md:px-[70px] text-white">
 
-        <div class="text-[21px] font-bold tracking-[1px]">
-            TICKET<span class="text-[#9b59b6]">BOX</span>
-        </div>
+    <div class="text-[21px] font-bold tracking-[1px]">
+        TICKET<span class="text-[#9b59b6]">BOX</span>
+    </div>
 
-        <div class="flex gap-3 md:gap-7">
+    <div class="flex gap-3 md:gap-7">
 
-            <a href="/"
-               class="text-white no-underline text-[11px] md:text-[13px] hover:text-[#b879d1]">
-                HOME
-            </a>
+        <!-- HOME -->
+        <a href="/"
+           class="text-white no-underline text-[11px] md:text-[13px] hover:text-[#b879d1]">
+            HOME
+        </a>
 
-            <a href="/konser"
-               class="text-white no-underline text-[11px] md:text-[13px] hover:text-[#b879d1]">
-                KONSER
-            </a>
+        <!-- KONSER -->
+        <a href="/konser"
+           class="text-white no-underline text-[11px] md:text-[13px] hover:text-[#b879d1]">
+            KONSER
+        </a>
 
-            <a href="/tiket"
-               class="text-white no-underline text-[11px] md:text-[13px] hover:text-[#b879d1]">
-                TIKET
-            </a>
+        <!-- TIKET -->
+        <a href="/tiket"
+           class="text-white no-underline text-[11px] md:text-[13px] hover:text-[#b879d1]">
+            TIKET
+        </a>
 
-            <a href="/merchandise"
-               class="text-[#b879d1] no-underline text-[11px] md:text-[13px]">
-                MERCHANDISE
-            </a>
+        <!-- MERCHANDISE -->
+        <a href="{{ route('merchandise.index') }}"
+           class="text-white no-underline text-[11px] md:text-[13px] hover:text-[#b879d1]">
+            MERCHANDISE
+        </a>
 
-            <a href="/pembeli"
-               class="text-white no-underline text-[11px] md:text-[13px] hover:text-[#b879d1]">
-                PEMBELI
-            </a>
+        <!-- PEMBELI AKTIF -->
+        <a href="/pembeli"
+           class="text-[#b879d1] no-underline text-[11px] md:text-[13px]">
+            PEMBELI
+        </a>
 
-        </div>
+    </div>
 
-    </nav>
-
+</nav>
 
     <!-- CONTENT -->
     <main class="w-[90%] max-w-[1150px] mx-auto py-10">
