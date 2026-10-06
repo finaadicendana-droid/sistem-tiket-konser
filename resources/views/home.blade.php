@@ -34,11 +34,11 @@
             </a>
 
             <a href="/pembeli" class="text-white no-underline text-[11px] md:text-[13px] hover:text-[#b879d1]">
-                PEMBELI
+                MERCHANDISE
             </a>
 
             <a href="/pemesanan" class="text-white no-underline text-[11px] md:text-[13px] hover:text-[#b879d1]">
-                PEMESANAN
+                PEMBELI
             </a>
 
         </div>
@@ -136,7 +136,7 @@
             </a>
 
 
-            <!-- PEMESANAN -->
+            <!-- PEmbeli -->
             <a
                 href="/pembeli"
                 class="text-center p-6 bg-white border border-[#e4dfe8] rounded-lg no-underline text-[#222] transition duration-200 hover:border-[#9b59b6] hover:shadow-md hover:-translate-y-0.5"

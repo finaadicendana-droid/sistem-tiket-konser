@@ -36,14 +36,16 @@
                 TIKET
             </a>
 
+            <a
+            href="{{ route('merchandise.index') }}"
+            class="text-[#b879d1] no-underline text-[12px] md:text-[14px]"
+            >
+             MERCHANDISE
+            </a>
+
             <a href="/pembeli"
                class="text-white no-underline text-[11px] md:text-[13px] hover:text-[#b879d1]">
                 PEMBELI
-            </a>
-
-            <a href="/pemesanan"
-               class="text-white no-underline text-[11px] md:text-[13px] hover:text-[#b879d1]">
-                PEMESANAN
             </a>
 
         </div>
@@ -261,3 +263,4 @@
 </body>
 
 </html>
+ 

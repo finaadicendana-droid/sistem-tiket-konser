@@ -36,14 +36,14 @@
                 TIKET
             </a>
 
-            <a href="/pembeli"
+            <a href="/merchandise"
                class="text-[#b879d1] no-underline text-[11px] md:text-[13px]">
-                PEMBELI
+                MERCHANDISE
             </a>
 
-            <a href="/pemesanan"
+            <a href="/pembeli"
                class="text-white no-underline text-[11px] md:text-[13px] hover:text-[#b879d1]">
-                PEMESANAN
+                PEMBELI
             </a>
 
         </div>

@@ -68,25 +68,26 @@ class MerchandiseController extends Controller
 
     // EDIT - menyimpan perubahan
     public function update(Request $request, $id)
-    {
-        $request->validate([
-            'nama_merchandise' => 'required',
-            'kategori' => 'required',
-            'harga' => 'required|integer',
-            'stok' => 'required|integer',
-        ]);
+{
+    $request->validate([
+        'nama_merchandise' => 'required',
+        'kategori' => 'required',
+        'harga' => 'required|numeric',
+        'stok' => 'required|integer',
+    ]);
 
-        $merchandise = Merchandise::findOrFail($id);
+    $merchandise = Merchandise::findOrFail($id);
 
-        $merchandise->update([
-            'Nama_Merchandise' => $request->nama_merchandise,
-            'Kategori' => $request->kategori,
-            'Harga' => $request->harga,
-            'Stok' => $request->stok,
-        ]);
+    $merchandise->nama_merchandise = $request->nama_merchandise;
+    $merchandise->kategori = $request->kategori;
+    $merchandise->harga = $request->harga;
+    $merchandise->stok = $request->stok;
 
-        return redirect('/merchandise');
-    }
+    $merchandise->save();
+
+    return redirect()->route('merchandise.index')
+        ->with('success', 'Data merchandise berhasil diperbarui.');
+}
 
     // DELETE
     public function destroy($id)

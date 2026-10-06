@@ -20,7 +20,7 @@
                 Edit Data Merchandise
             </h1>
 
-            <form action="/merchandise/{{ $merchandise->id }}" method="POST" class="space-y-5">
+            <form action="{{ route('merchandise.update', $merchandise->id) }}" method="POST">
 
                 @csrf
                 @method('PUT')
@@ -77,20 +77,20 @@
                     >
                 </div>
 
-                <div class="flex gap-3 pt-2">
+                <div class="flex gap-3 mt-6">
 
                     <button
                         type="submit"
-                        class="bg-purple-600 text-white px-5 py-2.5 rounded-lg hover:bg-purple-700"
+                        class="bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-lg">
                     >
                         Simpan Perubahan
                     </button>
 
                     <a
-                        href="/merchandise"
-                        class="bg-gray-200 text-gray-700 px-5 py-2.5 rounded-lg hover:bg-gray-300"
+                        href="{{ route('merchandise.index') }}"
+                        class="bg-gray-200 hover:bg-gray-300 text-gray-800 px-6 py-3 rounded-lg">
                     >
-                        Batal
+                        Kembali
                     </a>
 
                 </div>
